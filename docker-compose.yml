@@ -1,0 +1,17 @@
+services:
+  db:
+    image: postgres:16.4
+    container_name: postgres_container
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: L322434i
+      POSTGRES_DB: rental_db
+    volumes:
+      - ./data:/var/lib/postgresql/data
+  adminer:
+    image: adminer
+    container_name: adminer_container
+    ports:
+      - "5050:80"
